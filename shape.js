@@ -1,11 +1,9 @@
-// var input = process.argv;
-// var type = input[2];
 function Shape(type) {
 	this.type = type;
 	}    
 
 
-Shape.prototype.thisType = function (){
+Shape.prototype.thisType = function thisType (){
 	return "this is a " + this.type 
 };
 
@@ -15,36 +13,30 @@ var aShape =  triangle.thisType();
 
 console.log (triangle instanceof Shape);
 
-function Triangle (side1, side2, side3){
+function AnyShape (side1, side2, side3, side4){
 	this.side1 = side1;
 	this.side2 = side2;
 	this.side3 = side3;	
+	this.side4 = side4;
 }
 
-Triangle.prototype.thisTriangle = function(){
-	return "sides equal "+this.side1+ " " +this.side2+ " "+this.side3
+AnyShape.prototype.thisAnyShape = function thisAnyShape(){
+	return "sides equal "+this.side1
 }
 
-var secTri = new Triangle (2,4,6)
+var secTri = new AnyShape (2,4,6)
 
-var aTri = secTri.thisTriangle();
+var aTri = secTri.thisAnyShape();
 
 console.log(aShape + " " +aTri);
-
-// //newSquare is an instance of Shape
-// var newSquare = new Shape("square", 1)
-// console.log(newSquare.constructor);
-// console.log(newSquare.constructor === Object); 
-// console.log(newSquare.get_Type);
-// console.log("**************");
-// console.log(newSquare.thisType());
-
-
 
  
 function Square (side1){
 	this.side1 = side1;
-	this.side1 = side2;
-	this.side1 = side3;
-	this.side1 = side4;
 }
+
+var square = new Shape("square");
+var aShape1 =  square.thisType();
+var secSq = new AnyShape (7);
+var aSq = secSq.thisAnyShape();
+console.log(aShape1 + " " +aSq);
